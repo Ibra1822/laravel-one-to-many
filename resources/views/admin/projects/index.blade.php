@@ -20,7 +20,8 @@
     @endif
 </div>
   <div class="card-down">
-    <h5 class="my-3">{{$project->name}}</h5>
+    <h5 class="my-3">{{$project->name}}  </h5>
+    <h6 class="text-decoration-underline">{{$project->type?->name}}</h6>
     <div class="d-flex justify-content-center align-items-center ">
         <a class="btn btn-light" href="{{route('admin.projects.show',$project)}}"><i class="fa-solid fa-eye"></i></a>
         <a class="btn btn-light" href="{{route('admin.projects.edit',$project)}}"><i class="fa-solid fa-pen"></i></a>

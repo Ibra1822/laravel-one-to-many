@@ -11,6 +11,8 @@
 @else
 <img src="https://troianiortodonzia.it/wp-content/uploads/2016/10/orionthemes-placeholder-image.png" alt="">
 @endif
+<h2> Tipo di progetto : {{$project->type?->name}}</h2>
+
 <p>{{$project->original_image_name}}</p>
 <p>Descrizzione : {{$project->summary}}</p>
 

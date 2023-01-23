@@ -19,7 +19,7 @@ class ProjectTypesSeeder extends Seeder
         $projects = Project::all();
         foreach($projects as $project){
             $type_id = Type::inRandomOrder()->first()->id;
-            $project->types_id = $type_id;
+            $project->type_id = $type_id;
             $project->update();
         }
     }

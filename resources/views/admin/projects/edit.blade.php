@@ -35,6 +35,18 @@
         <input type="text" class="form-control  @error('client_name') error @enderror "  value="{{$project->client_name}}" placeholder="Inserisci il nome del cliente" name="client_name">
         @error('client_name') <p> {{$message}} </p> @enderror
       </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Tipo di progetto</label>
+        <select name="type_id" id="" class="form-control" >
+            <option value="">Seleziona il tipo di progetto</option>
+            @foreach ($types as $type )
+                <option @if ($type->id == old('type_id', $project->type?->id )) selected @endif value="{{$type->id}}">{{$type->name}}</option>
+            @endforeach
+        </select>
+      </div>
+
+
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Immagine</label>
         <input type="file" onchange="showImage(event)" class="form-control @error('cover_image') error @enderror"   placeholder="Inserisci immagine" name="cover_image">

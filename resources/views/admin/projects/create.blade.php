@@ -35,6 +35,15 @@
         @error('client_name') <p> {{$message}} </p> @enderror
       </div>
       <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Tipo di progetto</label>
+        <select name="type_id" id="" class="form-control" >
+            <option value="">Seleziona il tipo di progetto</option>
+            @foreach ($types as $type )
+                <option @if ($type->id == old('type_id')) selected @endif value="{{$type->id}}">{{$type->name}}</option>
+            @endforeach
+        </select>
+      </div>
+      <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Immagine</label>
         <input type="file" onchange="showImage(event)"  class="form-control @error('cover_image') error @enderror " value="{{old('cover_image')}}"  name="cover_image">
         @error('cover_image') <p> {{$message}} </p> @enderror
@@ -42,6 +51,7 @@
             <img src="" alt="" id="output-image">
         </div>
     </div>
+
       <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Descrizione</label>
         <textarea class="form-control @error('summary') error @enderror  "  rows="5"  name="summary"></textarea>
