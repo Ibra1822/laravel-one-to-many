@@ -10,9 +10,7 @@
 </div>
 
 <div class="container index-cont">
-    @foreach ($projects as $project )
-
-
+ @foreach ($projects as $project )
 <div class="ib-card-index p-4">
   <div class="card-up">
     @if ($project->cover_image)
